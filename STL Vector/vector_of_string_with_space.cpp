@@ -10,9 +10,9 @@ int main()
     {
         getline(cin, v[i]);
     }
-    for (string val : v)
-    {
-        cout << val << endl;
-    }
+    // for (string val : v)
+    // {
+    //     cout << val << endl;
+    // }
     return 0;
 }
