@@ -29,7 +29,7 @@ int main()
         }
         else
         {
-            // bame jao
+    
             r = mid_index - 1;
         }
     }
