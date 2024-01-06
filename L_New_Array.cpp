@@ -4,8 +4,6 @@ using namespace std;
 vector<int> concatenateArrays(int n, vector<int> &arrA, vector<int> &arrB)
 {
     vector<int> concatenatedArray;
-
-    // Concatenate array B followed by array A
     concatenatedArray.insert(concatenatedArray.end(), arrB.begin(), arrB.end());
     concatenatedArray.insert(concatenatedArray.end(), arrA.begin(), arrA.end());
 
