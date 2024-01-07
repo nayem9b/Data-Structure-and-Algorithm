@@ -17,7 +17,7 @@ int main()
         l--;
         r--;
         int sum = 0;
-        for (int i = l; i <= r; i++)
+        for (int i = l; i <= r; i++) 
         {
             sum += a[i];
         }
