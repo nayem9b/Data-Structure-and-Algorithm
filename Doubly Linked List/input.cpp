@@ -42,7 +42,7 @@ void insert_tail(Node *&head, Node *&tail, int val)
         tail = newNode;
         return;
     }
-    tail->next = newNode;
+    // tail->next = newNode;
     newNode->prev = tail;
     tail = tail->next;
 }
