@@ -56,7 +56,7 @@ int main()
         cin >> val;
         if (val == -1)
             break;
-        insert_tail(head, tail, val);
+        // insert_tail(head, tail, val);
     }
     print_normal(head);
     print_reverse(tail);
