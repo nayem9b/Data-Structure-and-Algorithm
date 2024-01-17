@@ -40,7 +40,7 @@ int main()
     Node *b = new Node(30);
     Node *tail = b;
 
-      head->next = a;
+    head->next = a;
     a->prev = head;
     a->next = b;
     b->prev = a;
