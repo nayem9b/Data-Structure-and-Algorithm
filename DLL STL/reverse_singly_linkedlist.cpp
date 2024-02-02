@@ -5,30 +5,15 @@ class Node
 public:
     int val;
     Node *next;
+    Node *prev;
     Node(int val)
     {
         this->val = val;
         this->next = NULL;
+        this->prev = NULL;
     }
 };
-void print_recursion(Node *n)
-{
-    // base case
-    if (n == NULL)
-        return;
-    cout << n->val << " ";
-    print_recursion(n->next);
-}
-void print_reverse(Node *n)
-{
-    // base case
-    if (n == NULL)
-        return;
-
-    print_reverse(n->next);
-    cout << n->val << " ";
-}
-void print(Node *head)
+void print_normal(Node *head)
 {
     Node *tmp = head;
     while (tmp != NULL)
@@ -38,28 +23,45 @@ void print(Node *head)
     }
     cout << endl;
 }
-void reverse(Node *&head, Node *cur)
+void print_reverse(Node *tail)
 {
-    if (cur->next == NULL)
+    Node *tmp = tail;
+    while (tmp != NULL)
     {
-        head = cur;
-        return;
+        cout << tmp->val << " ";
+        tmp = tmp->prev;
     }
-    reverse(head, cur->next);
-    cur->next->next = cur;
-    cur->next = NULL;
+    cout << endl;
+}
+//Doubly Linkedlist reverse
+void reverse(Node *head, Node *tail)
+{
+    Node *i = head;
+    Node *j = tail;
+    while (i != j && i->next != j)
+    {
+        swap(i->val, j->val);
+        i = i->next;
+        j = j->prev;
+    }
+    swap(i->val, j->val);
 }
 int main()
 {
     Node *head = new Node(10);
-    Node *a = new Node(20);
-    Node *b = new Node(30);
-    Node *c = new Node(40);
+    // Node *a = new Node(20);
+    Node *tail = head;
 
-    head->next = a;
-    a->next = b;
-    b->next = c;
-    reverse(head, head);
-    print(head);
+    // connection
+    // head->next = a;
+    // a->prev = head;
+    // a->next = b;
+    // b->prev = a;
+    // b->next = c;
+    // c->prev = b;
+
+    reverse(head, tail);
+    print_normal(head);
+
     return 0;
 }
