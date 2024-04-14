@@ -10,6 +10,7 @@ int main()
         int x;
         cin >> x;
         q.push(x);
+        
     }
     while (!q.empty())
     {
